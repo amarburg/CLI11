@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
+project(cli11)
+
 if( NOT FIPS_IMPORT )
 	get_filename_component(FIPS_ROOT_DIR "../fips" ABSOLUTE)
 	include("${FIPS_ROOT_DIR}/cmake/fips.cmake")
 
-	fips_setup(PROJECT cli11)
+	fips_setup()
 
   if(${CMAKE_VERSION} VERSION_LESS 3.12)
       cmake_policy(VERSION ${CMAKE_VERSION})
